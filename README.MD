@@ -31,7 +31,7 @@ This repository contains a series of PyTorch implementations showing the evoluti
 - Better parameter efficiency
 
 ### Version 6 (F6) - Final Version
-- Added image augmentation (Random Rotation -7° to +7°)
+- Added image augmentation (Random Rotation -5° to +5°)
 - Best performing model with regularization and augmentation
 - Most robust against overfitting
 
@@ -40,11 +40,11 @@ This repository contains a series of PyTorch implementations showing the evoluti
 - Output: 10 classes (digits 0-9)
 - Loss Function: Negative Log Likelihood (NLL)
 - Optimizer: SGD with momentum (0.9)
-- Learning Rate: 0.01
+- Learning Rate: 0.015
 - Batch Size: 128
 
 ## Training
-- Epochs: 14
+- Epochs: 15
 - Train/Test Split: Standard MNIST split
 - GPU Support: Yes (CUDA compatible)
 
@@ -55,8 +55,6 @@ This repository contains a series of PyTorch implementations showing the evoluti
 - numpy
 - matplotlib
 - tqdm
-
-## Usage
 
 ## Usage
 Each version can be run independently. For local execution:
@@ -70,9 +68,3 @@ Each version shows progressive improvement in:
 - Training speed
 - Test accuracy
 - Generalization
-
-## Hardware Requirements
-- CPU: Any modern CPU (i5 or better recommended)
-- GPU: CUDA compatible (tested on GTX 1660Ti)
-- RAM: 8GB minimum
-- VRAM: 4GB minimum
