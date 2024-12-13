@@ -4,36 +4,75 @@ This repository contains a series of PyTorch implementations showing the evoluti
 
 ## Model Progression
 
-### Version 1 (F1)
-- Basic CNN architecture
-- No regularization
+### Model  1 
+####Target:
+- Create a Basic skeleton of the model
+- Set Basic Working Code
 - Simple architecture with Conv2d layers followed by MaxPooling
-- Final layer using 7x7 kernel to get to 1x1x10 output
+- Set Basic Training  & Test Loop
+- Set parameters to be less than 8000
+- Set Epochs to 15
+#### Result:
+- Parameters: 7,704
+- Best Train Accuracy: 98.72
+- Best Test Accuracy: 98.40
+#### Analysis:
+- The model is working with some over-fitting.
 
-### Version 2 (F2)
-- Added BatchNormalization after each convolution layer
-- Improved model stability and training speed
-- Same basic architecture as F1
+### Model  2 
+#### Target:
+- Added BatchNormalization after each convolution layer to increase model efficiency
+#### Result:
+- Parameters: 7,848
+- Best Train Accuracy: 99.62
+- Best Test Accuracy: 99.10
+#### Analysis:
+- We have started to see over-fitting a bit more now. 
+- Even if the model is pushed further, it won't be able to get to 99.4% Test Accuracy.
 
-### Version 3 (F3)
-- Introduced Dropout (0.1) for regularization
-- BatchNorm + Dropout combination
-- Better generalization compared to F2
+### Model 3 
+#### Target:
+- Introduced Dropout (0.08) for regularization
+#### Result:
+- Parameters: 7,848
+- Best Train Accuracy: 99.03
+- Best Test Accuracy: 99.12
+#### Analysis:
+- The model is not over-fitting at all now.
 
-### Version 4 (F4)
-- Changed architecture to use Global Average Pooling (GAP)
-- Reduced model parameters
-- More modern architectural choice compared to large kernel at end
+### Model 4 
+#### Target:
+- Changed architecture to use Global Average Pooling (GAP) and removed the BIG kernel at the end.
+#### Result:
+- Parameters: 3,964
+- Best Train Accuracy: 97.99
+- Best Test Accuracy: 98.70
+#### Analysis:
+- Reduced model parameters.
+- The model is under-fitting which is a good thing.
+- Since we have reduced model capacity, a reduction in performance is expected. 
 
-### Version 5 (F5)
-- Modified channel sizes
-- Optimized architecture with 16->8 channel transition
-- Better parameter efficiency
+### Model 5 
+#### Target:
+- Increased Paramter count and added more layers
+#### Result:
+- Parameters: 6,264
+- Best Train Accuracy: 98.86
+- Best Test Accuracy: 99.37 (15th Epoch)
+#### Analysis:
+- The model is still under-fitting which is a good thing.
+- Best Test Accuracy reached but still short by 0.03% from desired result.
 
-### Version 6 (F6) - Final Version
+### Model 6 - Final Version
+#### Target:
 - Added image augmentation (Random Rotation -5° to +5°)
-- Best performing model with regularization and augmentation
-- Most robust against overfitting
+#### Result:
+- Parameters: 6,264
+- Best Train Accuracy: 98.84
+- Best Test Accuracy: 99.18
+#### Analysis:
+- The model is under-fitting.
+- Test Accuracy is reduced a bit from last model.
 
 ## Architecture Details
 - Input: 28x28 MNIST images
