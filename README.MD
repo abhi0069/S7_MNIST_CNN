@@ -5,7 +5,7 @@ This repository contains a series of PyTorch implementations showing the evoluti
 ## Model Progression
 
 ### Model  1 
-####Target:
+#### Target:
 - Create a Basic skeleton of the model
 - Set Basic Working Code
 - Simple architecture with Conv2d layers followed by MaxPooling
